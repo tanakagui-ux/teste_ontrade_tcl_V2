@@ -104,8 +104,8 @@ def gerar_pdf(token):
     doc.build(elements)
     enviar_email(file_name)
 
-def import threading
-threading.Thread(target=enviar_email_link, args=(data["Email"], link)).start()
+import threading
+    threading.Thread(target=enviar_email_link, args=(data["Email"], link)).start()
     msg['Subject'] = 'Assinatura pendente'
     msg['From'] = os.environ.get("EMAIL_USER")
     msg['To'] = destinatario

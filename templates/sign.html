@@ -1,0 +1,12 @@
+<canvas id="canvas" width="400" height="200" style="border:1px solid"></canvas>
+<button onclick="save()">Assinar</button>
+<script>
+let c=document.getElementById("canvas"),x=c.getContext("2d"),d=false;
+c.onmousedown=()=>d=true;c.onmouseup=()=>d=false;
+c.onmousemove=e=>{if(!d)return;x.lineTo(e.offsetX,e.offsetY);x.stroke();}
+function save(){
+fetch("/save-signature",{method:"POST",headers:{"Content-Type":"application/json"},
+body:JSON.stringify({image:c.toDataURL(),token:"{{token}}"})})
+.then(()=>alert("Assinado"))
+}
+</script>

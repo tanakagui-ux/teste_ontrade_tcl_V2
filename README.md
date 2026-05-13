@@ -1,0 +1,1 @@
+testando plataforma para viabilidade
